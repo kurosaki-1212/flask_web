@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="Content-Style-Type" content="text/css">
+  <!-- タイトル -->
+  <title>polly</title>
+</head>
+
+<body>
+  <!-- 中央揃えにする -->
+  <center>
+    <!-- 見出し -->
+    <h1 class="right">AWS Pollyで音声合成をします</h1>
+    <form method="post" action="/polly">
+      <!-- 文字を入力してもらう -->
+      <h2>文字を入力してください</h2>
+      <textarea class="text" name="input_text" rows="5" cols="50"></textarea>
+      <!-- 言語を選択してもらう -->
+      <select name="input_polly">
+        <option value="Mizuki">Mizuki(日本人)</option>
+        <option value="Zhiyu">Zhiyu(中国人)</option>
+        <option value="Seoyeon">Seoyeon(韓国人)</option>
+        <option value="Joanna">Joanna(アメリカ人)</option>
+        <option value="Celine">Celine(フランス人)</option>
+      </select>
+      <input class="bottun" type="submit" value="発声">
+    </form>
+    <hr>
+    <!-- 入力された文字を表示する -->
+    <h2>入力された文章</h2>
+    <textarea class="text" name="input_text" rows="5" cols="50">{{input_text}}</textarea>
+  </center>
+  <!-- メニュー画面へ戻るボタン -->
+  <a href="/menu" class="btn">メニュー画面に戻る</a>
+</body>
+</html>
+
+
+<!-- css -->
+<style>
+  body {
+    /* 画像を背景に張り付ける */
+    background-image: url("../static/image/aws.jpg");
+    /* 画像の繰り返し表示を停止する */
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    /* 一番大きい文字を赤くする */
+    color: #ff0000;
+  }
+
+  /* メニューへ戻るボタンの設定 */
+  .btn {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    padding: 10px 30px;
+    background-color: gray;
+    display: block;
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(teal, blue);
+  }
+</style>

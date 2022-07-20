@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- タイトル -->
+  <title>モザイク処理</title>
+</head>
+
+<body>
+  <!-- 中央揃えにする -->
+  <center>
+    <!-- 見出し -->
+    <h1>顔のモザイク処理</h1>
+    <div>
+      <form action="/mozaiku" method="POST" enctype="multipart/form-data">
+        <div>
+          <h2>画像ファイル</h2>
+        </div>
+        <div>
+          <!-- 画像ファイルを参照してもらう -->
+          <input type="file" name="image" accept="image/*" required>
+        </div>
+        <div>
+          <!-- モザイク処理を行いダウンロードする -->
+          <input type="submit" value="ダウンロード">
+        </div>
+      </form>
+      <hr>
+      <div>
+        <!-- 選択した画像の名前を表示する -->
+        <p>選択された画像：{{ filename }}</p>
+        <!-- 成功した場合「ダウンロードしました」と表示する -->
+        <p>{{ success }}</p>
+        <!-- モザイク処理をした画像を張り付ける -->
+        <img src="{{ image_url }}" alt="{{ image_name }}">
+      </div>
+    </div>
+  </center>
+  <!-- メニュー画面に戻るボタン -->
+  <a href="/menu" class="btn">メニュー画面に戻る</a>
+</body>
+
+
+<!-- css -->
+<style>
+  /* 背景をシルバーにする */
+  body {
+    background-color: silver;
+  }
+
+  /* メニューへ戻るボタンの設定 */
+  .btn {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    padding: 10px 30px;
+    background-color: gray;
+    display: block;
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(gray, purple);
+  }
+</style>
